@@ -1,0 +1,17 @@
+1)  Define OOPs.
+
+OOPs refers to Obeject Oriented Programming. It is the programming paradigm that aims to implement real world entities and is relation and behaviours.
+
+2) Objects: Objects can be defined as instances of class having all the behaviours and values of the class.
+
+Features of OOPs:
+There are four major features of OOPs.
+
+Inheritance: Mechanism by which an object or class is created using definition of other object or class. Improves code reusability.
+
+Polymorphism: It means to behave differently in different conditions. 
+
+Encapsulation: Process of binding data member and methods to do a job without revealing unnecessary information. (Data Binding + Data Hiding)
+
+Abstraction: Mechanism by which only relevant details are shown. Other non-important components are hidden.
+
