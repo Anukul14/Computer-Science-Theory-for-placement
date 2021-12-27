@@ -1,8 +1,9 @@
-1)  Define OOPs.
 
 OOPs refers to Obeject Oriented Programming. It is the programming paradigm that aims to implement real world entities and is relation and behaviours.
 
-2) Objects: Objects can be defined as instances of class having all the behaviours and values of the class.
+Class: Can be understood as a template or a blueprint having all the functions and properties. An object acquires all of it.
+
+Objects: Objects can be defined as instances of class having all the behaviours and values of the class.
 
 Features of OOPs:
 There are four major features of OOPs.
@@ -15,3 +16,73 @@ Encapsulation: Process of binding data member and methods to do a job without re
 
 Abstraction: Mechanism by which only relevant details are shown. Other non-important components are hidden.
 
+
+Static vs Non- static functions:
+
+Static Function: No objct is create hence requires no memory. Can take only static members as parameters.
+Can be accesed without creating an object of a class.
+
+Non- static Function: Requires an object, hence uses memory. Can take both static and non-static members as parameters.
+To access non-static methods we need to create an object of the class.
+
+Constructor:
+We use Constructor to initialize a class object. It is a special member function which is automatically called when instance is created.
+
+Three main types of constructor (in C++ and the only ones asked in interviews):
+Default Constructor: No parameters or arguments.
+
+Copy Constructor: Initialises object using another object of the same class.
+
+Parametrized Constructor: A parameter is passed as argument to the class. When defining the body of class, use the parameter to define the values.
+
+Inheritance:
+Inheritance of some characteristics or behaviour of one entity by another entity is called inheritance.
+
+Types of Inheritance:
+1)Single Inheritance 2)Multiple Inheritance 3) Multilevel- Inheritance
+
+Java doesn't support multiple inheritance
+Sub class : The inheriting class
+Super class : The inherited class
+
+
+Types of Polymorphism: 
+Compile Time Polymorphism :
+Also known as static polymorohism. Flow of execution based on parameter and arguments at compile time.
+
+1) Method Overloading
+If an entity has multiple implementations in the same name. Same name of methods but different parameters/parameter types.
+Only changing the return type of method will result in ambiguity.
+
+Main method can be overloaded and can be called from only the original method with parameter string array.
+
+2) Operator Overloading
+Providing thee operator with a special meaning  like '+','-',etc.
+
+Run Time Polymorohism: 
+Also known as Dynamic Polymorphism. Decided at run time.
+
+1)Method Overriding
+Same method defined in parent class can be defined again in the subclass and overriden.
+Only the methods can be overriden by inheritance and not the variable.
+
+'super' keyword used to access the parent methods.
+
+Abstraction: 
+Hiding unwanted details and only giving the functions to user.
+Achieved with the help of abstract methods and classes.
+Abstract classes: A class whose methods are only declared not defined. The inheriting class need to define their own definitions of the methods.
+
+Interface: For an inetrface implementations, one must define all its methods.
+
+Abstract class vs Interface
+Abstract class can be inherited but Interface can be implemented.
+Abstract classes can have non-final variables but Interface variables are static and final.
+Only need to define the classes which you want to use but in case of Interface we need to define all the methods.
+
+Exception:
+Exceptional/Special Event occured during the execution, whe execution runs into something that is not defined or an illegal access.
+To handle software failures we use Exception Handling.
+
+Java only uses Object Oriented Programming while C++ uses both OOPs and structural programming.
+Grabage Collection: Automatic in Java, we don't need to think of its implementation.
