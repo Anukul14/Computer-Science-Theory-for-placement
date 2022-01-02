@@ -1,88 +1,213 @@
 
-OOPs refers to Object-Oriented Programming. It is the programming paradigm that aims to implement real-world entities and is relation and behaviours.
+:) OOPs refers to Object-Oriented Programming. It is the programming paradigm that aims to implement real-world entities and is relation and behaviours.
 
-Class: Can be understood as a template or a blueprint having all the functions and properties. An object acquires all of it.
+:) Class: Can be understood as a template or a blueprint having all the functions and properties. An object acquires all of it.
 
-Objects: Objects can be defined as instances of a class having all the behaviours and values of the class.
+:) Objects: Objects can be defined as instances of a class having all the behaviours and values of the class.
 
-Features of OOPs:
-There are four major features of OOPs.
+:) Features of OOPs:
+  
+  There are four major features of OOPs.
 
-Inheritance: Mechanism by which an object or class is created using a definition of another object or class. Improves code reusability.
+  Inheritance: Mechanism by which an object or class is created using a definition of another object or class. Improves code reusability.
 
-Polymorphism: It means to behave differently in different conditions. 
+  Polymorphism: It means to behave differently in different conditions. 
 
-Encapsulation: Process of binding data members and methods to do a job without revealing unnecessary information. (Data Binding + Data Hiding)
+  Encapsulation: Process of binding data members and methods to do a job without revealing unnecessary information. (Data Binding + Data Hiding)
 
-Abstraction: Mechanism by which only relevant details are shown. Other non-important components are hidden.
-
-
-Static vs Non- static functions:
-
-Static Function: No object is created hence requires no memory. Can take only static members as parameters.
-Can be accessed without creating an object of a class.
-
-Non- static Function: Requires an object, hence uses memory. Can take both static and non-static members as parameters.
-To access non-static methods we need to create an object of the class.
-
-Constructor:
-We use Constructor to initialize a class object. It is a special member function that is automatically called when an instance is created.
-
-Three main types of the constructor (in C++ and the only ones asked in interviews):
-Default Constructor: No parameters or arguments.
-
-Copy Constructor: Initialises object using another object of the same class.
-
-Parameterized Constructor: A parameter is passed as an argument to the class. When defining the body of a class, use the parameter to define the values.
-
-Inheritance:
-Inheritance of some characteristics or behaviour of one entity by another entity is called inheritance.
-
-Types of Inheritance:
-1)Single Inheritance 2)Multiple Inheritance 3) Multilevel- Inheritance
-
-Java doesn't support multiple inheritances
-Subclass: The inheriting class
-Superclass: The inherited class
+  Abstraction: Mechanism by which only relevant details are shown. Other non-important components are hidden.
 
 
-Types of Polymorphism: 
-Compile Time Polymorphism :
-Also known as static polymorphism. The flow of execution is based on parameters and arguments at compile time.
+:) Static vs Non- static functions:
 
-1) Method Overloading
-If an entity has multiple implementations in the same name. The same name of methods but different parameters/parameter types.
-Only changing the return type of method will result in ambiguity.
+  Static Function:  Can take only static members as parameters. Can be accessed without creating an object of a class.
 
-The main method can be overloaded and can be called from only the original method with parameter string array.
+  Non- static Function: Requires an object, hence uses memory. Can take both static and non-static members as parameters.
+  To access non-static methods we need to create an object of the class.
+  Any function not declared static explicitly is non-static in nature.
+  
+  Example:
+  import java.util.*;
+  import java.lang.*;
+  import java.io.*;
+  class Example1{
+    public static int func1(int a, int b){
+      return a+b;
+    }
+    public int func2(int a, int b){
+      return a*b;
+    }
+  }
+  class Example
+  {
+    public static void main (String[] args) throws java.lang.Exception
+    {
+      // accesing static function
+      System.out.println(Example1.func1(4,5));
+      //prints 9;
+      
+      //accessing non-static function through object
+      Example1 exmp= new Example1();
+      System.out.println(exmp.func2(4,5));
+      //prints 20;
+    }
+  }
 
-2) Operator Overloading
-Providing the operator with a special meaning like '+','-', etc.
+:) Constructor:
+  We use Constructor to initialize a class object. It is a special member function that is automatically called when an instance is created.
 
-Run Time Polymorphism: 
-Also known as Dynamic Polymorphism. Decided at run time.
+  Three main types of the constructor (in C++ and the only ones asked in interviews):
 
-1)Method Overriding
-The same method defined in the parent class can be defined again in the subclass and overridden.
-Only the methods can be overridden by inheritance and not the variable.
+  ## Default Constructor: No parameters or arguments.
 
-'super' keyword used to access the parent methods.
+  ## Copy Constructor: Initialises object using another object of the same class.
 
-Abstraction: 
-Hiding unwanted details and only giving the functions to the user.
-Achieved with the help of abstract methods and classes.
-Abstract classes: A class whose methods are only declared not defined. The inheriting class need to define their own definitions of the methods.
+  ## Parameterized Constructor: A parameter is passed as an argument to the class. When defining the body of a class, use the parameter to define the values.
+  
+  class A{
+    int x;
+    // default constructor
+    A(){
+      x= 5;
+    }
+    
+    // parameterized constructor
+    A(int a){
+      x= a;
+    }
+    
+    // copy constructor
+    A(A obj1){
+      x= obj1.x;
+    }
+  }
 
-Interface: For an interface implementation, one must define all its methods.
+:) Inheritance:
+  Inheritance of some characteristics or behaviour of one entity by another entity is called inheritance.
 
-Abstract class vs Interface
-An abstract class can be inherited but an Interface can be implemented.
-Abstract classes can have non-final variables but Interface variables are static and final.
-Only need to define the classes which you want to use but in the case of Interface, we need to define all the methods.
+  Types of Inheritance:
+  1)Single Inheritance 2)Multiple Inheritance 3) Multilevel- Inheritance
 
-Exception:
-Exceptional/Special Event occurs during the execution when execution runs into something that is not defined or illegal access.
-To handle software failures we use Exception Handling.
+  Java doesn't support multiple inheritances
+  Subclass: The inheriting class
+  Superclass: The inherited class
+  Example:
+  import java.util.*;
+  import java.lang.*;
+  import java.io.*;
+  
+  class Vehicle{
+    int pos=0;
+    int speed= 10;
+    public void move(){
+       pos+= speed/10;
+    }
+  }
+  class Car extends Vehicle{
+    // inherits the fuction and the variables
+    public int currPos(){
+      return pos;
+    }
+  }
+  class Example{
+    public static void main(String args[]){
+      Car c= new Car();
+      
+      System.out.println(c.currPos());
+      // prints 0
+      
+      //move
+      c.move();
+      
+      System.out.println(c.currPos());
+      // print 1
+    }
+  }
+:) Types of Polymorphism: 
+  ## Compile Time Polymorphism :
+     Also known as static polymorphism. The flow of execution is based on parameters and arguments at compile time.
 
-Java only uses Object Oriented Programming while C++ uses both OOPs and structural programming.
-Garbage Collection: Automatic in Java, we don't need to think of its implementation.
+  1) Method Overloading
+  If an entity has multiple implementations in the same name. The same name of methods but different parameters/parameter types.
+  Only changing the return type of method will result in ambiguity.
+  Example:  
+      import java.util.*;
+      import java.lang.*;
+      import java.io.*;
+
+      class Example
+      {
+        static int func(int a, int b){
+          return a+b;
+        }
+        static int func(int a, int b, int c){
+          return a+b+c;
+        }
+
+        public static void main (String[] args) throws java.lang.Exception
+        {
+          // your code goes here
+          System.out.println(func(4,5));
+          //prints 9
+          
+          System.out.println(func(4,5,6));
+          //prints 15
+        }
+      }
+      
+  The main method can be overloaded and can be called from only the original method with parameter string array.
+
+  2) Operator Overloading
+  Providing the operator with a special meaning like '+','-', etc.
+
+  ## Run Time Polymorphism: 
+     Also known as Dynamic Polymorphism. Decided at run time.
+
+  1) Method Overriding
+  The same method defined in the parent class can be defined again in the subclass and overridden.
+  Only the methods can be overridden by inheritance and not the variable.
+
+  import java.util.*;
+  import java.lang.*;
+  import java.io.*;
+  class Vehicle{
+    int pos=0;
+    public void move(){
+      pos+=1;
+    }
+  }
+  class Car extends Vehicle{
+    // overrides the move function defined in vehicle.
+    public void move(){
+      pos+=2;
+    }
+  }
+  class Example{
+    public static void main(String args[]){
+      Car c= new Car();
+      c.move();
+      System.out.println(c.pos);
+      //prints 2
+    }
+  }
+  
+  'super' keyword used to access the parent variables and methods from deriving class.
+
+:) Abstraction: 
+  Hiding unwanted details and only giving the functions to the user.
+  Achieved with the help of abstract methods and classes.
+  Abstract classes: A class whose methods are only declared not defined. The inheriting class need to define their own definitions of the methods.
+
+:) Interface: For an interface implementation, one must define all its methods.
+
+:) Abstract class vs Interface
+  An abstract class can be inherited but an Interface can be implemented.
+  Abstract classes can have non-final variables but Interface variables are static and final.
+  Only need to define the classes which you want to use but in the case of Interface, we need to define all the methods.
+
+:) Exception:
+ Exceptional/Special Event occurs during the execution when execution runs into something that is not defined or illegal access.
+ To handle software failures we use Exception Handling.
+
+:)  Java only uses Object Oriented Programming while C++ uses both OOPs and structural programming.
+:)  Garbage Collection: Automatic in Java, we don't need to think of its implementation.
